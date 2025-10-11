@@ -1,19 +1,41 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7l0xjobm077a"]
+[gd_scene load_steps=4 format=3 uid="uid://s80qbebmwtk6"]
 
-[ext_resource type="Texture2D" uid="uid://cgfch4o12um6a" path="res://assets/sprites/joystick/joystick outer ring.png" id="1_m03u7"]
-[ext_resource type="Script" uid="uid://dfgjv0cp786bv" path="res://joystick.gd" id="2_luu5j"]
-[ext_resource type="Texture2D" uid="uid://bewtfhl3pyx4a" path="res://assets/sprites/joystick/joystick inner ring.png" id="3_g1lyw"]
+[ext_resource type="Texture2D" uid="uid://cgfch4o12um6a" path="res://assets/sprites/joystick/joystick outer ring.png" id="1_413m4"]
+[ext_resource type="Texture2D" uid="uid://bewtfhl3pyx4a" path="res://assets/sprites/joystick/joystick inner ring.png" id="3_e821k"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_m03u7"]
+[sub_resource type="GDScript" id="GDScript_dm1l1"]
+script/source = "extends TouchScreenButton
+@onready var knob = $Knob
+@onready var max_distance = shape.radius
+
+var stick_center: Vector2 = texture_normal.get_size()/2
+var touched:bool =  false
+
+func _ready():
+	set_process(false)
+
+func _input(event):
+	if event is InputEventScreenTouch:
+		if event.pressed:
+			set_process(true)
+		else:
+			set_process(false)
+			knob.position = stick_center
+
+func _process(delta):
+	knob.global_position = get_global_mouse_position()
+	knob.position = stick_center+(knob.position-stick_center).limit_length(max_distance)
+
+func get_joystick_dir()->Vector2:
+	var dir = knob.position-stick_center
+	return dir.normalized()
+		
+"
 
 [node name="Joystick" type="TouchScreenButton"]
-scale = Vector2(1.11667, 1.1)
-texture_normal = ExtResource("1_m03u7")
-shape = SubResource("CircleShape2D_m03u7")
-script = ExtResource("2_luu5j")
+texture_normal = ExtResource("1_413m4")
+script = SubResource("GDScript_dm1l1")
 
 [node name="Knob" type="Sprite2D" parent="."]
-position = Vector2(14.3284, 15.4545)
-scale = Vector2(0.947761, 0.926136)
-texture = ExtResource("3_g1lyw")
-centered = false
+position = Vector2(30, 30)
+texture = ExtResource("3_e821k")

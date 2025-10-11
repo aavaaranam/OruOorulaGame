@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cgf3526i5r4ek"]
+[gd_scene load_steps=4 format=3 uid="uid://cqj2kxmb6riha"]
 
 [ext_resource type="Script" uid="uid://cftp7tubd6jxe" path="res://scripts/basic_player.gd" id="1_sbat7"]
-[ext_resource type="Texture2D" uid="uid://cvmnpka6qj1bd" path="res://icon.svg" id="2_tqelr"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4flbx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o8q1b"]
 radius = 62.84
@@ -10,7 +11,7 @@ radius = 62.84
 script = ExtResource("1_sbat7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_tqelr")
+texture = SubResource("CompressedTexture2D_4flbx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_o8q1b")
