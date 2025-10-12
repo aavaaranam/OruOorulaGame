@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cpvg70f3op50s" path="res://assets/sprites/models/farm-produce/cement road.png" id="6_qkpxi"]
 [ext_resource type="Texture2D" uid="uid://c65xjfvrtgspf" path="res://assets/sprites/models/environment/terrain/gravel road.png" id="7_5q0nq"]
 [ext_resource type="Texture2D" uid="uid://ddn5iejfqumj5" path="res://assets/sprites/models/house/pot.png" id="8_dgi5k"]
+[ext_resource type="Texture2D" uid="uid://cbqpr1pmlvykv" path="res://assets/sprites/models/flowers/jasmine.png" id="9_2wyq8"]
 [ext_resource type="Texture2D" uid="uid://clmpnurfylemw" path="res://tilemap/Trees_free.png" id="9_j8jky"]
 [ext_resource type="Texture2D" uid="uid://cvvocggseof32" path="res://assets/sprites/models/environment/terrain/gravel.png" id="10_kmb1v"]
 [ext_resource type="Texture2D" uid="uid://c4jjoa0ibbp7r" path="res://assets/sprites/models/farm-produce/chrysanthemum.png" id="11_fuf3a"]
@@ -18,8 +19,6 @@
 [ext_resource type="Script" uid="uid://bjplqf1tv0kkr" path="res://scripts/player.gd" id="16_2cjbq"]
 [ext_resource type="Texture2D" uid="uid://cptc0wj2bgxmx" path="res://assets/sprites/player-girl/player-girl-attack1.png" id="17_chjal"]
 [ext_resource type="Texture2D" uid="uid://lqbtvb302c68" path="res://assets/sprites/player-girl/player-girl.png" id="18_cjqg0"]
-[ext_resource type="Texture2D" uid="uid://bemv3legwj450" path="res://assets/sprites/player-girl/player-girl-sheet.png" id="19_vchkt"]
-[ext_resource type="PackedScene" uid="uid://s80qbebmwtk6" path="res://scenes/joystick.tscn" id="20_txyw0"]
 [ext_resource type="Script" uid="uid://c6wxaatqrjb04" path="res://classes/states/finite_state_machine.gd" id="21_vc5cj"]
 [ext_resource type="Script" uid="uid://npri8euky5ki" path="res://classes/states/idle_state.gd" id="22_nvyfr"]
 [ext_resource type="Script" uid="uid://c144847al5f1s" path="res://classes/states/walk_state.gd" id="23_ty1g6"]
@@ -27,6 +26,7 @@
 [ext_resource type="AudioStream" uid="uid://beyu0abcoqela" path="res://sounds/sword_sfx.wav" id="25_bjg73"]
 [ext_resource type="AudioStream" uid="uid://de1fxnni42wuv" path="res://sounds/stepdirt_2.wav" id="26_bu4jf"]
 [ext_resource type="PackedScene" uid="uid://was4ua81jd4g" path="res://scenes/paatti.tscn" id="27_o7ddy"]
+[ext_resource type="PackedScene" uid="uid://cvooo30smur5r" path="res://scenes/Jasmine plant.tscn" id="27_vxglm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_efxa6"]
 texture = ExtResource("1_vxglm")
@@ -437,6 +437,11 @@ texture = ExtResource("8_dgi5k")
 0:0/0/y_sort_origin = 7
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 12, 0, 8, 8, 0, 12, -8, 8, -12, 0)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vxglm"]
+texture = ExtResource("9_2wyq8")
+0:0/size_in_atlas = Vector2i(7, 7)
+0:0/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lquwl"]
 texture = ExtResource("9_j8jky")
 0:0/size_in_atlas = Vector2i(3, 4)
@@ -507,6 +512,7 @@ sources/9 = SubResource("TileSetAtlasSource_getpj")
 sources/10 = SubResource("TileSetAtlasSource_ryguw")
 sources/12 = SubResource("TileSetAtlasSource_d13ii")
 sources/11 = SubResource("TileSetAtlasSource_1u8w0")
+sources/14 = SubResource("TileSetAtlasSource_vxglm")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_come4"]
 atlas = ExtResource("17_chjal")
@@ -532,20 +538,20 @@ region = Rect2(0, 0, 32, 32)
 atlas = ExtResource("18_cjqg0")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ryguw"]
-atlas = ExtResource("19_vchkt")
+[sub_resource type="AtlasTexture" id="AtlasTexture_og1vs"]
+atlas = ExtResource("18_cjqg0")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d13ii"]
-atlas = ExtResource("19_vchkt")
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wyq8"]
+atlas = ExtResource("18_cjqg0")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1u8w0"]
-atlas = ExtResource("19_vchkt")
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxglm"]
+atlas = ExtResource("18_cjqg0")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0odxb"]
-atlas = ExtResource("19_vchkt")
+[sub_resource type="AtlasTexture" id="AtlasTexture_2f3dj"]
+atlas = ExtResource("18_cjqg0")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lswn8"]
@@ -580,20 +586,20 @@ region = Rect2(64, 64, 32, 32)
 atlas = ExtResource("18_cjqg0")
 region = Rect2(96, 64, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4k2k6"]
-atlas = ExtResource("19_vchkt")
+[sub_resource type="AtlasTexture" id="AtlasTexture_yq6so"]
+atlas = ExtResource("18_cjqg0")
 region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0rl1p"]
-atlas = ExtResource("19_vchkt")
+[sub_resource type="AtlasTexture" id="AtlasTexture_fv21b"]
+atlas = ExtResource("18_cjqg0")
 region = Rect2(32, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ok6jj"]
-atlas = ExtResource("19_vchkt")
+[sub_resource type="AtlasTexture" id="AtlasTexture_tel4y"]
+atlas = ExtResource("18_cjqg0")
 region = Rect2(64, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_facbu"]
-atlas = ExtResource("19_vchkt")
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkpxi"]
+atlas = ExtResource("18_cjqg0")
 region = Rect2(96, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4k2k6"]
@@ -628,16 +634,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ryguw")
+"texture": SubResource("AtlasTexture_og1vs")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_d13ii")
+"texture": SubResource("AtlasTexture_2wyq8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1u8w0")
+"texture": SubResource("AtlasTexture_vxglm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0odxb")
+"texture": SubResource("AtlasTexture_2f3dj")
 }],
 "loop": true,
 "name": &"walk-down",
@@ -679,16 +685,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4k2k6")
+"texture": SubResource("AtlasTexture_yq6so")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0rl1p")
+"texture": SubResource("AtlasTexture_fv21b")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ok6jj")
+"texture": SubResource("AtlasTexture_tel4y")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_facbu")
+"texture": SubResource("AtlasTexture_qkpxi")
 }],
 "loop": true,
 "name": &"walk-up",
@@ -697,8 +703,6 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4c57u"]
 radius = 4.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_getpj"]
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
@@ -709,11 +713,11 @@ tile_set = SubResource("TileSet_272bh")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="TileMapLayer"]
 y_sort_enabled = true
-position = Vector2(114, 48)
+position = Vector2(116, 48)
 tile_map_data = PackedByteArray("AAAgAAsAAgAAAAAAAAAKABgAAgAAAAAAAAATAAoACwAAAAEAAGAVAAsABgAAAAAAAAAdAAsABgAAAAAAAAANAAoACwAAAAEAAGAIAAsAAwAAAAAAAAAKAAsAAwAAAAAAAAAXAAoACwAAAAEAAGAYAAoACwAAAAEAAGAXAAsABwAAAAAAAAAXAAkACwABAAEAAAAYAAkACwABAAEAAAAWAAsABwAAAAAAAAAaABMACQAAAAIAAAAjABAACgAAAAAAAAAlABAACgACAAAAAAAnABAACgAEAAAAAAAnABIACgAEAAIAAAAlABIACgACAAIAAAAjABIACgAAAAIAAAAkABMACgAGAAAAAAAmABMACgAGAAAAAAAkABUACgACAAIAAFAmABUACgACAAAAAFAkABcACgAAAAIAAAAmABcACgAEAAIAAAAmABQACgACAAAAAFAkABQACgACAAIAAFASABAADAAAAAAAAAARAA4ADAAAAAAAAAAjAAQACwAAAAEAAFAjAAUACwABAAEAAAAjAAYACwABAAEAAAAjAAcACwAAAAEAAAAjAAkACwAAAAEAAAAjAAgACwAAAAEAAAAkAAUACwABAAEAAAAkAAYACwABAAEAAAAkAAcACwABAAEAAAAkAAgACwABAAEAAAAkAAkACwABAAEAAAAlAAUACwABAAEAAAAlAAYACwABAAEAAAAlAAcACwABAAEAAAAlAAgACwABAAEAAAAlAAkACwABAAEAAAAmAAUACwAAAAEAADAmAAYACwAAAAEAADAmAAcACwAAAAEAADAmAAgACwAAAAEAADAmAAkACwAAAAEAADAmAAoACwAAAAEAADAjAAoACwAAAAEAAAAjAAsACwAAAAEAAAAmAAsACwAAAAEAADAkAAoACwABAAEAAAAlAAoACwABAAEAAAAlAAsACwABAAEAAAAkAAsACwABAAEAAAAmAAQACwAAAAAAAFAkAAQACwAAAAEAAFAlAAQACwAAAAEAAFAkAAwACwAAAAEAAGAlAAwACwAAAAEAAGAjAAwACwAAAAAAAGAmAAwACwAAAAAAADAGAAMABQAAAAEAAAAiAAQACwAAAAEAAFAhAAQACwAAAAEAAFAgAAQACwAAAAEAAFAfAAQACwAAAAEAAFAeAAQACwAAAAEAAFAdAAQACwAAAAEAAFAcAAQACwAAAAEAAFAbAAQACwAAAAEAAFAaAAQACwAAAAEAAFAZAAQACwAAAAEAAFAiAAYACwAAAAEAAGAhAAYACwAAAAEAAGAgAAYACwAAAAEAAGAfAAYACwAAAAEAAGAeAAYACwAAAAEAAGAdAAYACwAAAAEAAGAcAAYACwAAAAEAAGAbAAYACwAAAAEAAGAaAAYACwAAAAEAAGAZAAYACwABAAEAAAAYAAYACwABAAEAAAAiAAUACwABAAEAAAAhAAUACwABAAEAAAAgAAUACwABAAEAAAAfAAUACwABAAEAAAAeAAUACwABAAEAAAAdAAUACwABAAEAAAAcAAUACwABAAEAAAAbAAUACwABAAEAAAAaAAUACwABAAEAAAAZAAUACwABAAEAAAAYAAUACwABAAEAAAAYAAQACwABAAEAAAAXAAQACwAAAAAAAAAXAAUACwAAAAEAAAAXAAYACwAAAAEAAAAXAAcACwAAAAEAAAAXAAgACwABAAEAAAAWAAgACwAAAAEAAFAVAAgACwAAAAEAAFAUAAgACwAAAAEAAFATAAgACwAAAAEAAFAYAAcACwABAAEAAAAYAAgACwABAAEAAAAWAAkACwABAAEAAAAVAAkACwABAAEAAAAUAAkACwABAAEAAAATAAkACwABAAEAAAASAAkACwABAAEAAAASAAgACwAAAAEAAFASAAoACwAAAAEAAGAUAAoACwAAAAEAAGAVAAoACwAAAAEAAGAWAAoACwAAAAEAAGAZAAoACwAAAAAAADAZAAcACwAAAAEAADAZAAgACwAAAAEAADAZAAkACwAAAAEAADARAAkACwABAAEAAAAQAAkACwABAAEAAAAPAAkACwABAAEAAAAOAAkACwABAAEAAAANAAkACwABAAEAAAAMAAkACwABAAEAAAALAAkACwABAAEAAAAKAAkACwABAAEAAAAGAAkACwABAAEAAAAHAAkACwABAAEAAAAIAAkACwABAAEAAAAJAAkACwABAAEAAAAFAAgACwAAAAAAAAAFAAoACwAAAAAAAGAFAAkACwAAAAEAAAAGAAgACwAAAAEAAFAHAAgACwAAAAEAAFAIAAgACwAAAAEAAFAJAAgACwAAAAEAAFAKAAgACwAAAAEAAFALAAgACwAAAAEAAFAMAAgACwAAAAEAAFANAAgACwAAAAEAAFAOAAgACwAAAAEAAFAPAAgACwAAAAEAAFAQAAgACwAAAAEAAFARAAgACwAAAAEAAFAMAAoACwAAAAEAAGALAAoACwAAAAEAAGAKAAoACwAAAAEAAGAJAAoACwAAAAEAAGAIAAoACwAAAAEAAGAHAAoACwAAAAEAAGAGAAoACwAAAAEAAGAOAAoACwAAAAEAAGAPAAoACwAAAAEAAGAQAAoACwAAAAEAAGARAAoACwAAAAEAAGALAAUACAAAAAAAAAAMAAUACAAAAAAAAAANAAUACAAAAAAAAAAOAAUACAAAAAAAAAAPAAUACAAAAAAAAAABAAsABAAAAAAAAAAJABAACwAAAAEAAAAJAA8ACwAAAAAAAAAKABAACwABAAEAAAAKAA8ACwAAAAEAAFALAA8ACwAAAAEAAFAMAA8ACwAAAAEAAFAMABAACwAAAAEAADAOAAwABgAAAAAAAAAQAAwABgAAAAAAAAATAAwABgAAAAAAAAAEAA8ABgAAAAAAAAAPAA8ABwAAAAAAAAATAAEACwAAAAAAAAAUAAEACwAAAAEAAFAUAAIACwABAAEAAAATAAIACwAAAAEAAAAVAAEACwAAAAAAAFAVAAIACwAAAAEAADA=")
 tile_set = SubResource("TileSet_4c57u")
 
-[node name="Player" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
 y_sort_enabled = true
 position = Vector2(154, 180)
 script = ExtResource("16_2cjbq")
@@ -726,25 +730,13 @@ limit_top = 0
 y_sort_enabled = true
 position = Vector2(74, 79)
 sprite_frames = SubResource("SpriteFrames_4k2k6")
-animation = &"walk-right"
+animation = &"walk-up"
 offset = Vector2(0, -12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 y_sort_enabled = true
 position = Vector2(74, 78)
 shape = SubResource("CircleShape2D_4c57u")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="Player"]
-visible = false
-offset = Vector2(550, 200)
-transform = Transform2D(1, 0, 0, 1, 550, 200)
-
-[node name="Joystick" parent="Player/CanvasLayer" instance=ExtResource("20_txyw0")]
-scale = Vector2(2, 2)
-shape = SubResource("CircleShape2D_getpj")
-
-[node name="Knob" parent="Player/CanvasLayer/Joystick" index="0"]
-position = Vector2(29.5, 30.5)
 
 [node name="FiniteStateMachine" type="Node" parent="Player" node_paths=PackedStringArray("initial_state")]
 script = ExtResource("21_vc5cj")
@@ -773,5 +765,7 @@ position = Vector2(258, 415)
 [node name="PathFollow2D" parent="Paatti/Path2D" index="0"]
 y_sort_enabled = true
 
-[editable path="Player/CanvasLayer/Joystick"]
+[node name="JasminePlant" parent="." instance=ExtResource("27_vxglm")]
+position = Vector2(104, 325)
+
 [editable path="Paatti"]

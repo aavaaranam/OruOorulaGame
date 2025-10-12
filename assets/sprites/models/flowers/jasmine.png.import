@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b705rbxv37l7k"
-path="res://.godot/imported/paatti-walk-down2.png-fa33b0ffb2d15905ac9fe36d8c58c262.ctex"
+uid="uid://cbqpr1pmlvykv"
+path="res://.godot/imported/jasmine.png-13c73e878007c4ecc17064c4e2b29faf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/npcs/paatti-walk-down2.png"
-dest_files=["res://.godot/imported/paatti-walk-down2.png-fa33b0ffb2d15905ac9fe36d8c58c262.ctex"]
+source_file="res://assets/sprites/models/flowers/jasmine.png"
+dest_files=["res://.godot/imported/jasmine.png-13c73e878007c4ecc17064c4e2b29faf.ctex"]
 
 [params]
 
