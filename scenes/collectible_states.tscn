@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0d1buac3xm6"]
+
+[ext_resource type="Script" uid="uid://c6wxaatqrjb04" path="res://classes/states/finite_state_machine.gd" id="1_jgdva"]
+[ext_resource type="Script" uid="uid://danpbko6wxf47" path="res://classes/states/collectible_idle.gd" id="2_sdijw"]
+[ext_resource type="Script" uid="uid://dqadaco8j1i5t" path="res://classes/states/collectible_picking.gd" id="3_h1r70"]
+
+[node name="CollectibleStates" type="Node"]
+script = ExtResource("1_jgdva")
+
+[node name="CollectibleIdle" type="Node2D" parent="."]
+script = ExtResource("2_sdijw")
+
+[node name="CollectiblePicking" type="Node2D" parent="."]
+script = ExtResource("3_h1r70")

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cbqpr1pmlvykv" path="res://assets/sprites/models/flowers/jasmine.png" id="2_lyxsa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lyxsa"]
-radius = 42.107006
+radius = 42.107
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5mebo"]
 atlas = ExtResource("2_lyxsa")
@@ -49,7 +49,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_erlvv")
 }],
-"loop": true,
+"loop": false,
 "name": &"picking",
 "speed": 5.0
 }]
@@ -61,8 +61,8 @@ script = ExtResource("1_wm0n5")
 position = Vector2(-3, 20)
 shape = SubResource("CircleShape2D_lyxsa")
 
-[node name="JasminePlant" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_uikbk")
-animation = &"idle"
+animation = &"picking"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
