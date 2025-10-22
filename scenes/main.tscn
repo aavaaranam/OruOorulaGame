@@ -1,9 +1,9 @@
-[gd_scene load_steps=113 format=4 uid="uid://kyyfnxr2miyw"]
+[gd_scene load_steps=109 format=4 uid="uid://kyyfnxr2miyw"]
 
-[ext_resource type="PackedScene" uid="uid://c6sklxx7qw6yf" path="res://scenes/atombomb.tscn" id="1_5q0nq"]
-[ext_resource type="PackedScene" uid="uid://drxvb16khtruj" path="res://scenes/sanguchakram.tscn" id="1_fv21b"]
-[ext_resource type="PackedScene" uid="uid://bbt08dp03x07d" path="res://scenes/Saravedi.tscn" id="1_qkpxi"]
-[ext_resource type="PackedScene" uid="uid://bogdclpn1uuos" path="res://scenes/lakshmivedi.tscn" id="1_tel4y"]
+[ext_resource type="PackedScene" path="res://scenes/atombomb.tscn" id="1_5q0nq"]
+[ext_resource type="PackedScene" path="res://scenes/sanguchakram.tscn" id="1_fv21b"]
+[ext_resource type="PackedScene" path="res://scenes/Saravedi.tscn" id="1_qkpxi"]
+[ext_resource type="PackedScene" path="res://scenes/lakshmivedi.tscn" id="1_tel4y"]
 [ext_resource type="Texture2D" uid="uid://2w2oh8btf4ad" path="res://assets/sprites/models/house/house-tiled.png" id="1_vxglm"]
 [ext_resource type="Texture2D" uid="uid://buftieptcqg6s" path="res://tilemap/Grass_Terrain_AT_free.png" id="2_2f3dj"]
 [ext_resource type="Texture2D" uid="uid://f5iijk1kpu6n" path="res://assets/sprites/models/environment/terrain/terrain-soil.png" id="3_yq6so"]
@@ -26,7 +26,7 @@
 [ext_resource type="Script" uid="uid://c6wxaatqrjb04" path="res://classes/states/finite_state_machine.gd" id="21_vc5cj"]
 [ext_resource type="Texture2D" uid="uid://m875ryicr2it" path="res://assets/sprites/player-girl/player-girl-oothuvathi.png" id="21_yq6so"]
 [ext_resource type="Script" uid="uid://npri8euky5ki" path="res://classes/states/idle_state.gd" id="22_nvyfr"]
-[ext_resource type="Script" uid="uid://0igkopvfj7hi" path="res://scenes/camera_2d.gd" id="23_dgi5k"]
+[ext_resource type="Script" path="res://scenes/camera_2d.gd" id="23_dgi5k"]
 [ext_resource type="Script" uid="uid://c144847al5f1s" path="res://classes/states/walk_state.gd" id="23_ty1g6"]
 [ext_resource type="Script" uid="uid://ci5fbvxfeebrq" path="res://classes/states/attack_state.gd" id="24_j2jfr"]
 [ext_resource type="AudioStream" uid="uid://beyu0abcoqela" path="res://sounds/sword_sfx.wav" id="25_bjg73"]
@@ -34,7 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://dlcwk8m6xotid" path="res://assets/sprites/player-girl/player-girl-shock.png" id="27_j8jky"]
 [ext_resource type="PackedScene" uid="uid://was4ua81jd4g" path="res://scenes/paatti.tscn" id="27_o7ddy"]
 [ext_resource type="PackedScene" uid="uid://cvooo30smur5r" path="res://scenes/Jasmine plant.tscn" id="27_vxglm"]
-[ext_resource type="PackedScene" uid="uid://b1e1dr2ssach1" path="res://scenes/firework.tscn" id="28_2f3dj"]
+[ext_resource type="PackedScene" path="res://scenes/firework.tscn" id="28_2f3dj"]
 
 [sub_resource type="Curve" id="Curve_fv21b"]
 _data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(0.99999, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -658,22 +658,6 @@ region = Rect2(32, 0, 32, 32)
 atlas = ExtResource("27_j8jky")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kf5aa"]
-atlas = ExtResource("27_j8jky")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t5ykj"]
-atlas = ExtResource("27_j8jky")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e755i"]
-atlas = ExtResource("27_j8jky")
-region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ro3en"]
-atlas = ExtResource("27_j8jky")
-region = Rect2(192, 0, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_og1vs"]
 atlas = ExtResource("18_cjqg0")
 region = Rect2(0, 0, 32, 32)
@@ -854,18 +838,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tm6hj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kf5aa")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t5ykj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e755i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ro3en")
 }],
 "loop": false,
 "name": &"shock",
@@ -992,7 +964,7 @@ script = ExtResource("23_dgi5k")
 y_sort_enabled = true
 position = Vector2(74, 79)
 sprite_frames = SubResource("SpriteFrames_4k2k6")
-animation = &"oothuvathi"
+animation = &"shock"
 offset = Vector2(0, -12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
