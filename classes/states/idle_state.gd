@@ -13,3 +13,7 @@ func update(_delta : float):
 		
 	if Input.is_action_just_pressed("Attack"):
 		state_transition.emit(self, "Attacking")
+
+
+func _on_thenna_maram_coconut_falling() -> void:
+	state_transition.emit(self,"Shock")

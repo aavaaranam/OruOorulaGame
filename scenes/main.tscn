@@ -1,9 +1,10 @@
-[gd_scene load_steps=109 format=4 uid="uid://kyyfnxr2miyw"]
+[gd_scene load_steps=111 format=4 uid="uid://kyyfnxr2miyw"]
 
-[ext_resource type="PackedScene" path="res://scenes/atombomb.tscn" id="1_5q0nq"]
-[ext_resource type="PackedScene" path="res://scenes/sanguchakram.tscn" id="1_fv21b"]
-[ext_resource type="PackedScene" path="res://scenes/Saravedi.tscn" id="1_qkpxi"]
-[ext_resource type="PackedScene" path="res://scenes/lakshmivedi.tscn" id="1_tel4y"]
+[ext_resource type="PackedScene" uid="uid://c6sklxx7qw6yf" path="res://scenes/atombomb.tscn" id="1_5q0nq"]
+[ext_resource type="PackedScene" uid="uid://drxvb16khtruj" path="res://scenes/sanguchakram.tscn" id="1_fv21b"]
+[ext_resource type="PackedScene" uid="uid://0qf3k7f2aqd5" path="res://scenes/thenna-maram.tscn" id="1_kmb1v"]
+[ext_resource type="PackedScene" uid="uid://bbt08dp03x07d" path="res://scenes/Saravedi.tscn" id="1_qkpxi"]
+[ext_resource type="PackedScene" uid="uid://bogdclpn1uuos" path="res://scenes/lakshmivedi.tscn" id="1_tel4y"]
 [ext_resource type="Texture2D" uid="uid://2w2oh8btf4ad" path="res://assets/sprites/models/house/house-tiled.png" id="1_vxglm"]
 [ext_resource type="Texture2D" uid="uid://buftieptcqg6s" path="res://tilemap/Grass_Terrain_AT_free.png" id="2_2f3dj"]
 [ext_resource type="Texture2D" uid="uid://f5iijk1kpu6n" path="res://assets/sprites/models/environment/terrain/terrain-soil.png" id="3_yq6so"]
@@ -26,7 +27,7 @@
 [ext_resource type="Script" uid="uid://c6wxaatqrjb04" path="res://classes/states/finite_state_machine.gd" id="21_vc5cj"]
 [ext_resource type="Texture2D" uid="uid://m875ryicr2it" path="res://assets/sprites/player-girl/player-girl-oothuvathi.png" id="21_yq6so"]
 [ext_resource type="Script" uid="uid://npri8euky5ki" path="res://classes/states/idle_state.gd" id="22_nvyfr"]
-[ext_resource type="Script" path="res://scenes/camera_2d.gd" id="23_dgi5k"]
+[ext_resource type="Script" uid="uid://0igkopvfj7hi" path="res://scenes/camera_2d.gd" id="23_dgi5k"]
 [ext_resource type="Script" uid="uid://c144847al5f1s" path="res://classes/states/walk_state.gd" id="23_ty1g6"]
 [ext_resource type="Script" uid="uid://ci5fbvxfeebrq" path="res://classes/states/attack_state.gd" id="24_j2jfr"]
 [ext_resource type="AudioStream" uid="uid://beyu0abcoqela" path="res://sounds/sword_sfx.wav" id="25_bjg73"]
@@ -34,7 +35,8 @@
 [ext_resource type="Texture2D" uid="uid://dlcwk8m6xotid" path="res://assets/sprites/player-girl/player-girl-shock.png" id="27_j8jky"]
 [ext_resource type="PackedScene" uid="uid://was4ua81jd4g" path="res://scenes/paatti.tscn" id="27_o7ddy"]
 [ext_resource type="PackedScene" uid="uid://cvooo30smur5r" path="res://scenes/Jasmine plant.tscn" id="27_vxglm"]
-[ext_resource type="PackedScene" path="res://scenes/firework.tscn" id="28_2f3dj"]
+[ext_resource type="PackedScene" uid="uid://b1e1dr2ssach1" path="res://scenes/firework.tscn" id="28_2f3dj"]
+[ext_resource type="Script" uid="uid://c0h4yee4ejs6w" path="res://scenes/shock_state.gd" id="33_fuf3a"]
 
 [sub_resource type="Curve" id="Curve_fv21b"]
 _data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(0.99999, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -919,7 +921,11 @@ radius = 4.0
 y_sort_enabled = true
 position = Vector2(37, 31)
 
+[node name="ThennaMaram" parent="." instance=ExtResource("1_kmb1v")]
+position = Vector2(288, 324)
+
 [node name="AtomBomb" parent="." instance=ExtResource("1_5q0nq")]
+visible = false
 position = Vector2(298, 251)
 
 [node name="Saravedi" parent="." instance=ExtResource("1_qkpxi")]
@@ -964,7 +970,7 @@ script = ExtResource("23_dgi5k")
 y_sort_enabled = true
 position = Vector2(74, 79)
 sprite_frames = SubResource("SpriteFrames_4k2k6")
-animation = &"shock"
+animation = &"attack"
 offset = Vector2(0, -12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
@@ -985,6 +991,9 @@ script = ExtResource("23_ty1g6")
 [node name="Attacking" type="Node2D" parent="Player/FiniteStateMachine"]
 script = ExtResource("24_j2jfr")
 
+[node name="Shock" type="Node2D" parent="Player/FiniteStateMachine"]
+script = ExtResource("33_fuf3a")
+
 [node name="swordSound" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource("25_bjg73")
 
@@ -994,7 +1003,7 @@ volume_db = -21.001
 pitch_scale = 0.87
 
 [node name="Paatti" parent="." instance=ExtResource("27_o7ddy")]
-position = Vector2(258, 415)
+position = Vector2(76, 390)
 
 [node name="PathFollow2D" parent="Paatti/Path2D" index="0"]
 y_sort_enabled = true
@@ -1003,6 +1012,8 @@ y_sort_enabled = true
 visible = false
 position = Vector2(277, 328)
 
+[connection signal="coconutFalling" from="ThennaMaram" to="Player/FiniteStateMachine/Idle" method="_on_thenna_maram_coconut_falling"]
+[connection signal="coconutFalling" from="ThennaMaram" to="Player/FiniteStateMachine/Attacking" method="_on_thenna_maram_coconut_falling"]
 [connection signal="fireworkBursting" from="AtomBomb" to="Player/Camera2D" method="_on_atom_bomb_firework_bursting"]
 [connection signal="fireworkfinished" from="AtomBomb" to="Player/Camera2D" method="_on_atom_bomb_fireworkfinished"]
 

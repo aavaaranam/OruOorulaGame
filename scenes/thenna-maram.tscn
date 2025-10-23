@@ -1,0 +1,133 @@
+[gd_scene load_steps=18 format=3 uid="uid://0qf3k7f2aqd5"]
+
+[ext_resource type="Script" uid="uid://bejke6hqo6n0e" path="res://scenes/thenna_maram.gd" id="1_cs67q"]
+[ext_resource type="Texture2D" uid="uid://ck68mq6psyect" path="res://assets/sprites/models/farm-produce/thennaimaram.png" id="2_ibgu6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fyjda"]
+radius = 34.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5co82"]
+atlas = ExtResource("2_ibgu6")
+region = Rect2(0, 0, 74, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs67q"]
+atlas = ExtResource("2_ibgu6")
+region = Rect2(296, 0, 74, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibgu6"]
+atlas = ExtResource("2_ibgu6")
+region = Rect2(370, 0, 74, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvaic"]
+atlas = ExtResource("2_ibgu6")
+region = Rect2(444, 0, 74, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqdcs"]
+atlas = ExtResource("2_ibgu6")
+region = Rect2(518, 0, 74, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65yhl"]
+atlas = ExtResource("2_ibgu6")
+region = Rect2(592, 0, 74, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qlfd"]
+atlas = ExtResource("2_ibgu6")
+region = Rect2(666, 0, 74, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7s6s"]
+atlas = ExtResource("2_ibgu6")
+region = Rect2(740, 0, 74, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_820bl"]
+atlas = ExtResource("2_ibgu6")
+region = Rect2(814, 0, 74, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_to3hu"]
+atlas = ExtResource("2_ibgu6")
+region = Rect2(814, 0, 74, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7ydb"]
+atlas = ExtResource("2_ibgu6")
+region = Rect2(74, 0, 74, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjwfl"]
+atlas = ExtResource("2_ibgu6")
+region = Rect2(148, 0, 74, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_443jh"]
+atlas = ExtResource("2_ibgu6")
+region = Rect2(222, 0, 74, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e2pff"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5co82")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cs67q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibgu6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvaic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqdcs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65yhl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qlfd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7s6s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_820bl")
+}],
+"loop": false,
+"name": &"falling",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_to3hu")
+}],
+"loop": false,
+"name": &"fell-down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7ydb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjwfl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_443jh")
+}],
+"loop": false,
+"name": &"shaking",
+"speed": 5.0
+}]
+
+[node name="ThennaMaram" type="Area2D"]
+script = ExtResource("1_cs67q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, 32)
+shape = SubResource("CircleShape2D_fyjda")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_e2pff")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

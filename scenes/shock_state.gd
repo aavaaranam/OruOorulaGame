@@ -1,5 +1,5 @@
 extends State
-class_name PlayerAttacking
+class_name PlayerShock
 
 #@export var movespeed := int(35)
 #@export var dash_max := int(500)
@@ -15,18 +15,11 @@ var player : CharacterBody2D
 
 func enter():
 	player = get_parent().get_parent()
-	animatedSprite.play("attack")
+	animatedSprite.play("shock")
 	
 func update(_delta : float):
-	#swordSound.play()
-	animatedSprite.play("attack")
-	
 	if animatedSprite.frame == 4: 
 		Transition("idle")
 
 func Transition(newstate : String):
 	state_transition.emit(self, newstate)
-
-
-func _on_thenna_maram_coconut_falling() -> void:
-	Transition("Shock")
