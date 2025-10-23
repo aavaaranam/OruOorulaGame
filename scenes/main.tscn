@@ -1,6 +1,7 @@
-[gd_scene load_steps=111 format=4 uid="uid://kyyfnxr2miyw"]
+[gd_scene load_steps=114 format=4 uid="uid://kyyfnxr2miyw"]
 
 [ext_resource type="PackedScene" uid="uid://c6sklxx7qw6yf" path="res://scenes/atombomb.tscn" id="1_5q0nq"]
+[ext_resource type="PackedScene" uid="uid://b6v6i315sn10x" path="res://Inventory/inventory_ui.tscn" id="1_c6pm6"]
 [ext_resource type="PackedScene" uid="uid://drxvb16khtruj" path="res://scenes/sanguchakram.tscn" id="1_fv21b"]
 [ext_resource type="PackedScene" uid="uid://0qf3k7f2aqd5" path="res://scenes/thenna-maram.tscn" id="1_kmb1v"]
 [ext_resource type="PackedScene" uid="uid://bbt08dp03x07d" path="res://scenes/Saravedi.tscn" id="1_qkpxi"]
@@ -30,6 +31,7 @@
 [ext_resource type="Script" uid="uid://0igkopvfj7hi" path="res://scenes/camera_2d.gd" id="23_dgi5k"]
 [ext_resource type="Script" uid="uid://c144847al5f1s" path="res://classes/states/walk_state.gd" id="23_ty1g6"]
 [ext_resource type="Script" uid="uid://ci5fbvxfeebrq" path="res://classes/states/attack_state.gd" id="24_j2jfr"]
+[ext_resource type="Resource" uid="uid://bk8dloy8mbxjp" path="res://Inventory/player_inventory.tres" id="25_5he1u"]
 [ext_resource type="AudioStream" uid="uid://beyu0abcoqela" path="res://sounds/sword_sfx.wav" id="25_bjg73"]
 [ext_resource type="AudioStream" uid="uid://de1fxnni42wuv" path="res://sounds/stepdirt_2.wav" id="26_bu4jf"]
 [ext_resource type="Texture2D" uid="uid://dlcwk8m6xotid" path="res://assets/sprites/player-girl/player-girl-shock.png" id="27_j8jky"]
@@ -37,6 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://cvooo30smur5r" path="res://scenes/Jasmine plant.tscn" id="27_vxglm"]
 [ext_resource type="PackedScene" uid="uid://b1e1dr2ssach1" path="res://scenes/firework.tscn" id="28_2f3dj"]
 [ext_resource type="Script" uid="uid://c0h4yee4ejs6w" path="res://scenes/shock_state.gd" id="33_fuf3a"]
+[ext_resource type="PackedScene" uid="uid://cyga33niqfngs" path="res://scenes/mango.tscn" id="40_5he1u"]
 
 [sub_resource type="Curve" id="Curve_fv21b"]
 _data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(0.99999, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -921,6 +924,17 @@ radius = 4.0
 y_sort_enabled = true
 position = Vector2(37, 31)
 
+[node name="Collectibles" type="Node" parent="."]
+
+[node name="Mango3" parent="Collectibles" instance=ExtResource("40_5he1u")]
+position = Vector2(363, 274)
+
+[node name="Mango" parent="Collectibles" instance=ExtResource("40_5he1u")]
+position = Vector2(307, 283)
+
+[node name="Mango2" parent="Collectibles" instance=ExtResource("40_5he1u")]
+position = Vector2(418, 293)
+
 [node name="ThennaMaram" parent="." instance=ExtResource("1_kmb1v")]
 position = Vector2(288, 324)
 
@@ -955,10 +969,28 @@ position = Vector2(116, 48)
 tile_map_data = PackedByteArray("AAAgAAsAAgAAAAAAAAAKABgAAgAAAAAAAAATAAoACwAAAAEAAGAVAAsABgAAAAAAAAAdAAsABgAAAAAAAAANAAoACwAAAAEAAGAXAAoACwAAAAEAAGAYAAoACwAAAAEAAGAXAAsABwAAAAAAAAAXAAkACwABAAEAAAAYAAkACwABAAEAAAAaABMACQAAAAIAAAAjABAACgAAAAAAAAAlABAACgACAAAAAAAnABAACgAEAAAAAAAnABIACgAEAAIAAAAlABIACgACAAIAAAAjABIACgAAAAIAAAAkABMACgAGAAAAAAAmABMACgAGAAAAAAAkABUACgACAAIAAFAmABUACgACAAAAAFAkABcACgAAAAIAAAAmABcACgAEAAIAAAAmABQACgACAAAAAFAkABQACgACAAIAAFAjAAQACwAAAAEAAFAjAAUACwABAAEAAAAjAAYACwABAAEAAAAjAAcACwAAAAEAAAAjAAkACwAAAAEAAAAjAAgACwAAAAEAAAAkAAUACwABAAEAAAAkAAYACwABAAEAAAAkAAcACwABAAEAAAAkAAgACwABAAEAAAAkAAkACwABAAEAAAAlAAUACwABAAEAAAAlAAYACwABAAEAAAAlAAcACwABAAEAAAAlAAgACwABAAEAAAAlAAkACwABAAEAAAAmAAUACwAAAAEAADAmAAYACwAAAAEAADAmAAcACwAAAAEAADAmAAgACwAAAAEAADAmAAkACwAAAAEAADAmAAoACwAAAAEAADAjAAoACwAAAAEAAAAjAAsACwAAAAEAAAAmAAsACwAAAAEAADAkAAoACwABAAEAAAAlAAoACwABAAEAAAAlAAsACwABAAEAAAAkAAsACwABAAEAAAAmAAQACwAAAAAAAFAkAAQACwAAAAEAAFAlAAQACwAAAAEAAFAkAAwACwAAAAEAAGAlAAwACwAAAAEAAGAjAAwACwAAAAAAAGAmAAwACwAAAAAAADAGAAMABQAAAAEAAAAiAAQACwAAAAEAAFAhAAQACwAAAAEAAFAgAAQACwAAAAEAAFAfAAQACwAAAAEAAFAeAAQACwAAAAEAAFAdAAQACwAAAAEAAFAcAAQACwAAAAEAAFAbAAQACwAAAAEAAFAaAAQACwAAAAEAAFAZAAQACwAAAAEAAFAiAAYACwAAAAEAAGAhAAYACwAAAAEAAGAgAAYACwAAAAEAAGAfAAYACwAAAAEAAGAeAAYACwAAAAEAAGAdAAYACwAAAAEAAGAcAAYACwAAAAEAAGAbAAYACwAAAAEAAGAaAAYACwAAAAEAAGAZAAYACwABAAEAAAAYAAYACwABAAEAAAAiAAUACwABAAEAAAAhAAUACwABAAEAAAAgAAUACwABAAEAAAAfAAUACwABAAEAAAAeAAUACwABAAEAAAAdAAUACwABAAEAAAAcAAUACwABAAEAAAAbAAUACwABAAEAAAAaAAUACwABAAEAAAAZAAUACwABAAEAAAAYAAUACwABAAEAAAAYAAQACwABAAEAAAAXAAQACwAAAAAAAAAXAAUACwAAAAEAAAAXAAYACwAAAAEAAAAXAAcACwAAAAEAAAAXAAgACwABAAEAAAAWAAgACwAAAAEAAFAVAAgACwAAAAEAAFAUAAgACwAAAAEAAFATAAgACwAAAAEAAFAYAAcACwABAAEAAAAYAAgACwABAAEAAAAWAAkACwABAAEAAAAVAAkACwABAAEAAAAUAAkACwABAAEAAAATAAkACwABAAEAAAASAAkACwABAAEAAAASAAgACwAAAAEAAFASAAoACwAAAAEAAGAUAAoACwAAAAEAAGAVAAoACwAAAAEAAGAWAAoACwAAAAEAAGAZAAoACwAAAAAAADAZAAcACwAAAAEAADAZAAgACwAAAAEAADAZAAkACwAAAAEAADARAAkACwABAAEAAAAQAAkACwABAAEAAAAPAAkACwABAAEAAAAOAAkACwABAAEAAAANAAkACwABAAEAAAAMAAkACwABAAEAAAALAAkACwABAAEAAAAKAAkACwABAAEAAAAGAAkACwABAAEAAAAHAAkACwABAAEAAAAIAAkACwABAAEAAAAJAAkACwABAAEAAAAFAAgACwAAAAAAAAAFAAoACwAAAAAAAGAFAAkACwAAAAEAAAAGAAgACwAAAAEAAFAHAAgACwAAAAEAAFAIAAgACwAAAAEAAFAJAAgACwAAAAEAAFAKAAgACwAAAAEAAFALAAgACwAAAAEAAFAMAAgACwAAAAEAAFANAAgACwAAAAEAAFAOAAgACwAAAAEAAFAPAAgACwAAAAEAAFAQAAgACwAAAAEAAFARAAgACwAAAAEAAFAMAAoACwAAAAEAAGALAAoACwAAAAEAAGAKAAoACwAAAAEAAGAJAAoACwAAAAEAAGAIAAoACwAAAAEAAGAHAAoACwAAAAEAAGAGAAoACwAAAAEAAGAOAAoACwAAAAEAAGAPAAoACwAAAAEAAGAQAAoACwAAAAEAAGARAAoACwAAAAEAAGALAAUACAAAAAAAAAAMAAUACAAAAAAAAAANAAUACAAAAAAAAAAOAAUACAAAAAAAAAAPAAUACAAAAAAAAAABAAsABAAAAAAAAAAPAA8ABwAAAAAAAAATAAEACwAAAAAAAAAUAAEACwAAAAEAAFAUAAIACwABAAEAAAATAAIACwAAAAEAAAAVAAEACwAAAAAAAFAVAAIACwAAAAEAADA=")
 tile_set = SubResource("TileSet_4c57u")
 
+[node name="Paatti" parent="." instance=ExtResource("27_o7ddy")]
+position = Vector2(76, 390)
+
+[node name="PathFollow2D" parent="Paatti/Path2D" index="0"]
+y_sort_enabled = true
+
+[node name="Firework" parent="." instance=ExtResource("28_2f3dj")]
+visible = false
+position = Vector2(277, 328)
+
 [node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
+z_index = 10
 y_sort_enabled = true
 position = Vector2(154, 180)
 script = ExtResource("16_2cjbq")
+inventory = ExtResource("25_5he1u")
+
+[node name="Inventory_UI" parent="Player" instance=ExtResource("1_c6pm6")]
+offset_left = 109.0
+offset_top = 15.0
+offset_right = 195.0
+offset_bottom = 82.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(257, 0)
@@ -1001,16 +1033,6 @@ stream = ExtResource("25_bjg73")
 stream = ExtResource("26_bu4jf")
 volume_db = -21.001
 pitch_scale = 0.87
-
-[node name="Paatti" parent="." instance=ExtResource("27_o7ddy")]
-position = Vector2(76, 390)
-
-[node name="PathFollow2D" parent="Paatti/Path2D" index="0"]
-y_sort_enabled = true
-
-[node name="Firework" parent="." instance=ExtResource("28_2f3dj")]
-visible = false
-position = Vector2(277, 328)
 
 [connection signal="coconutFalling" from="ThennaMaram" to="Player/FiniteStateMachine/Idle" method="_on_thenna_maram_coconut_falling"]
 [connection signal="coconutFalling" from="ThennaMaram" to="Player/FiniteStateMachine/Attacking" method="_on_thenna_maram_coconut_falling"]
