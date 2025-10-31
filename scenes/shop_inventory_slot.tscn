@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvxapbwrp67so"]
+
+[ext_resource type="Texture2D" uid="uid://b8oy2i08agxlb" path="res://assets/sprites/maligai kadai/inventory-slot.png" id="2_xxh5s"]
+
+[node name="shop_inventory_slot" type="Panel"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(120, 56)
+offset_right = 120.0
+offset_bottom = 56.0
+localize_numeral_system = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(60, 28)
+texture = ExtResource("2_xxh5s")

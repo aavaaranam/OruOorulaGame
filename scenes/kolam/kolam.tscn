@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dt4cptyffem0u"]
+
+[ext_resource type="Texture2D" uid="uid://g4itbva0pq5t" path="res://assets/sprites/kolam/pulli.png" id="2_krybu"]
+
+[node name="Control" type="Control"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4, 4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_krybu")

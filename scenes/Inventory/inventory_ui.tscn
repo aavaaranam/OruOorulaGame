@@ -1,11 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://b6v6i315sn10x"]
 
-[ext_resource type="Script" uid="uid://dqqfghi4t2mr3" path="res://Inventory/inventory_ui.gd" id="1_6gduq"]
+[ext_resource type="Script" uid="uid://dqqfghi4t2mr3" path="res://scenes/Inventory/inventory_ui.gd" id="1_6gduq"]
 [ext_resource type="Texture2D" uid="uid://b8byv3xpka50h" path="res://assets/ui/inventory/item.png" id="2_n0pvb"]
-[ext_resource type="PackedScene" uid="uid://mwxs2m7mp7wi" path="res://Inventory/inventory_ui_slot.tscn" id="3_jhqvo"]
+[ext_resource type="PackedScene" uid="uid://mwxs2m7mp7wi" path="res://scenes/Inventory/inventory_ui_slot.tscn" id="3_jhqvo"]
 
 [node name="Inventory_UI" type="Control"]
-visible = false
 layout_mode = 3
 anchor_left = 0.09
 anchor_top = 0.183

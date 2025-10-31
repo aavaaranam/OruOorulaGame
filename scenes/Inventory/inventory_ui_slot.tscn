@@ -1,17 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://mwxs2m7mp7wi"]
 
-[ext_resource type="Script" uid="uid://srcghwk582y8" path="res://Inventory/inventory_ui_slot.gd" id="1_dbf71"]
+[ext_resource type="Script" uid="uid://srcghwk582y8" path="res://scenes/Inventory/inventory_ui_slot.gd" id="1_dbf71"]
 [ext_resource type="Texture2D" uid="uid://dyoicm50vlm2p" path="res://assets/ui/inventory/item_slot.png" id="1_n1b0j"]
 [ext_resource type="FontFile" uid="uid://bic4t446iwvam" path="res://assets/fonts/Pixelatedtamil-Regular.ttf" id="3_76a0n"]
 
 [node name="Inventory_UI_slot" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(16, 16)
+custom_minimum_size = Vector2(32, 32)
 offset_right = 16.0
 offset_bottom = 16.0
 script = ExtResource("1_dbf71")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("1_n1b0j")
 centered = false
 

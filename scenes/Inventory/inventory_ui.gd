@@ -1,5 +1,5 @@
 extends Control
-@onready var inventory:Inventory = preload("res://Inventory/player_inventory.tres")
+@onready var inventory:Inventory = preload("res://scenes/Inventory/player_inventory.tres")
 @onready var slots:Array = $NinePatchRect/GridContainer.get_children()
 var is_open = false
 
