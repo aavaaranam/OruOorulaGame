@@ -3,6 +3,8 @@ extends CharacterBody2D
 @onready var swordSound = $swordSound
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @export var inventory:Inventory
+@onready var inventory_ui: Control = $"../Camera2D/InventoryUI"
+
 
 
 
@@ -37,4 +39,4 @@ func addItemToInventory(invItem:InventoryItem):
 				i.count +=1
 	else:
 		inventory.items.append(invItem)
-		print (str(inventory.items[0].name))
+	inventory_ui.update_slots()

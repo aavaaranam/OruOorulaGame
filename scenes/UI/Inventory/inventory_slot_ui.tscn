@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbh7r5jfwko7m"]
+
+[ext_resource type="Script" uid="uid://cnpowr0x1w3uo" path="res://scenes/UI/Inventory/inventory_slot_ui.gd" id="1_e4xim"]
+[ext_resource type="Texture2D" uid="uid://dyoicm50vlm2p" path="res://assets/ui/inventory/item_slot.png" id="1_x0oii"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x482a"]
+
+[node name="Inventory_UI_slot" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+script = ExtResource("1_e4xim")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_x0oii")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="Panel" type="Panel" parent="NinePatchRect"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_x482a")
+
+[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect/Panel/CenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect/Panel/CenterContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="item_display" type="Sprite2D" parent="NinePatchRect/Panel/CenterContainer/MarginContainer/HBoxContainer"]
+
+[node name="Control" type="Control" parent="NinePatchRect/Panel/CenterContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="NinePatchRect/Panel/CenterContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 7
+horizontal_alignment = 2
+vertical_alignment = 2
