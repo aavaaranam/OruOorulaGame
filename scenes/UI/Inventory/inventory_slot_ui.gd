@@ -1,7 +1,7 @@
 extends MarginContainer
 
-@onready var item_display: Sprite2D = $NinePatchRect/Panel/CenterContainer/MarginContainer/HBoxContainer/item_display
-@onready var label: Label = $NinePatchRect/Panel/CenterContainer/MarginContainer/HBoxContainer/Label
+@onready var item_display: Sprite2D = $NinePatchRect/Panel/CenterContainer/MarginContainer/item_display
+@onready var label: Label = $NinePatchRect/Panel/MarginContainer3/HBoxContainer/Label
 
 func update(item:InventoryItem):
 	if !item:

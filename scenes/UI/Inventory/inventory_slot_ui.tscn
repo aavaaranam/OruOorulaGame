@@ -48,19 +48,34 @@ grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="NinePatchRect/Panel/CenterContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 4
-theme_override_constants/margin_top = 8
 
-[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect/Panel/CenterContainer/MarginContainer"]
+[node name="item_display" type="Sprite2D" parent="NinePatchRect/Panel/CenterContainer/MarginContainer"]
+
+[node name="MarginContainer2" type="MarginContainer" parent="NinePatchRect/Panel/CenterContainer"]
 layout_mode = 2
 
-[node name="item_display" type="Sprite2D" parent="NinePatchRect/Panel/CenterContainer/MarginContainer/HBoxContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="NinePatchRect/Panel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -11.0
+grow_horizontal = 0
+grow_vertical = 0
 
-[node name="Control" type="Control" parent="NinePatchRect/Panel/CenterContainer/MarginContainer/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect/Panel/MarginContainer3"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="NinePatchRect/Panel/CenterContainer/MarginContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="NinePatchRect/Panel/MarginContainer3/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
 theme_override_font_sizes/font_size = 7
 horizontal_alignment = 2
 vertical_alignment = 2
+
+[node name="Control" type="Control" parent="NinePatchRect/Panel/MarginContainer3/HBoxContainer"]
+layout_mode = 2

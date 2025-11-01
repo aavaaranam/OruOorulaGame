@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cdccjckfvqevo"]
 
 [ext_resource type="Texture2D" uid="uid://cwdx6s4nvgcw8" path="res://assets/sprites/models/house/kadai.png" id="1_64fu5"]
-[ext_resource type="Script" uid="uid://dqsf3moxw85u1" path="res://scenes/maligai_kadai.gd" id="1_ege14"]
-[ext_resource type="PackedScene" uid="uid://br428r6no4a5x" path="res://scenes/shop_inventory.tscn" id="2_sqx2j"]
+[ext_resource type="Script" uid="uid://dqsf3moxw85u1" path="res://scenes/maligai kadai/maligai_kadai.gd" id="1_ege14"]
+[ext_resource type="PackedScene" uid="uid://br428r6no4a5x" path="res://scenes/maligai kadai/ui/shop_inventory.tscn" id="2_sqx2j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ege14"]
 size = Vector2(54.5, 30)

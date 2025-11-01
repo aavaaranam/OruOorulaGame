@@ -26,7 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://cwdx6s4nvgcw8" path="res://assets/sprites/models/house/kadai.png" id="15_5poiv"]
 [ext_resource type="PackedScene" uid="uid://cyga33niqfngs" path="res://scenes/mango.tscn" id="19_2wyq8"]
 [ext_resource type="PackedScene" uid="uid://was4ua81jd4g" path="res://scenes/paatti.tscn" id="27_o7ddy"]
-[ext_resource type="PackedScene" uid="uid://cdccjckfvqevo" path="res://scenes/maligai_kadai.tscn" id="27_vxglm"]
+[ext_resource type="PackedScene" uid="uid://cdccjckfvqevo" path="res://scenes/maligai kadai/maligai_kadai.tscn" id="27_vxglm"]
 [ext_resource type="PackedScene" path="res://scenes/firework.tscn" id="28_2f3dj"]
 [ext_resource type="Script" uid="uid://0igkopvfj7hi" path="res://scenes/camera_2d.gd" id="29_yq6so"]
 [ext_resource type="Script" uid="uid://da5mci7p832kg" path="res://scenes/camera-area_2d.gd" id="30_fv21b"]
@@ -533,6 +533,7 @@ script = ExtResource("29_yq6so")
 [node name="InventoryUI" parent="Camera2D" instance=ExtResource("1_2f3dj")]
 offset_top = 160.0
 offset_bottom = 160.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Area2D" type="Area2D" parent="Camera2D"]
 script = ExtResource("30_fv21b")

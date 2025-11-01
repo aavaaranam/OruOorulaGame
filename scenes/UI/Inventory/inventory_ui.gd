@@ -1,7 +1,7 @@
 extends Control
 
 @onready var inventory:Inventory = preload("res://scenes/Inventory/player_inventory.tres")
-@onready var slots:Array = $popUpMenu/baseMenuContainer/baseMenuScreen/NinePatchRect/MarginContainer/SlotsContainer.get_children()
+@onready var slots:Array = $InventoryMenu/baseMenuContainer/baseMenuScreen/NinePatchRect/MarginContainer/SlotsContainer.get_children()
 var is_open = false
 
 func _ready() -> void:

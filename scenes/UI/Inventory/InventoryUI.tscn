@@ -15,7 +15,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_avsrv")
 
-[node name="popUpMenu" type="MarginContainer" parent="."]
+[node name="InventoryMenu" type="MarginContainer" parent="."]
 z_index = 1
 layout_mode = 1
 anchors_preset = 15
@@ -25,17 +25,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7pvpc")
 
-[node name="baseMenuContainer" type="VBoxContainer" parent="popUpMenu"]
+[node name="baseMenuContainer" type="VBoxContainer" parent="InventoryMenu"]
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_constants/separation = 20
 
-[node name="baseMenuScreen" type="MarginContainer" parent="popUpMenu/baseMenuContainer"]
+[node name="baseMenuScreen" type="MarginContainer" parent="InventoryMenu/baseMenuContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="NinePatchRect" type="NinePatchRect" parent="popUpMenu/baseMenuContainer/baseMenuScreen"]
+[node name="NinePatchRect" type="NinePatchRect" parent="InventoryMenu/baseMenuContainer/baseMenuScreen"]
 custom_minimum_size = Vector2(324, 42)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -46,7 +46,7 @@ patch_margin_top = 2
 patch_margin_right = 2
 patch_margin_bottom = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="popUpMenu/baseMenuContainer/baseMenuScreen/NinePatchRect"]
+[node name="MarginContainer" type="MarginContainer" parent="InventoryMenu/baseMenuContainer/baseMenuScreen/NinePatchRect"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -54,38 +54,38 @@ theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 7
 
-[node name="SlotsContainer" type="HBoxContainer" parent="popUpMenu/baseMenuContainer/baseMenuScreen/NinePatchRect/MarginContainer"]
+[node name="SlotsContainer" type="HBoxContainer" parent="InventoryMenu/baseMenuContainer/baseMenuScreen/NinePatchRect/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_constants/separation = 3
 
-[node name="MarginContainer" parent="popUpMenu/baseMenuContainer/baseMenuScreen/NinePatchRect/MarginContainer/SlotsContainer" instance=ExtResource("2_somwp")]
+[node name="Inventory_UI_slot" parent="InventoryMenu/baseMenuContainer/baseMenuScreen/NinePatchRect/MarginContainer/SlotsContainer" instance=ExtResource("2_somwp")]
 layout_mode = 2
 
-[node name="MarginContainer2" parent="popUpMenu/baseMenuContainer/baseMenuScreen/NinePatchRect/MarginContainer/SlotsContainer" instance=ExtResource("2_somwp")]
+[node name="Inventory_UI_slot2" parent="InventoryMenu/baseMenuContainer/baseMenuScreen/NinePatchRect/MarginContainer/SlotsContainer" instance=ExtResource("2_somwp")]
 layout_mode = 2
 
-[node name="MarginContainer3" parent="popUpMenu/baseMenuContainer/baseMenuScreen/NinePatchRect/MarginContainer/SlotsContainer" instance=ExtResource("2_somwp")]
+[node name="Inventory_UI_slot3" parent="InventoryMenu/baseMenuContainer/baseMenuScreen/NinePatchRect/MarginContainer/SlotsContainer" instance=ExtResource("2_somwp")]
 layout_mode = 2
 
-[node name="MarginContainer4" parent="popUpMenu/baseMenuContainer/baseMenuScreen/NinePatchRect/MarginContainer/SlotsContainer" instance=ExtResource("2_somwp")]
+[node name="Inventory_UI_slot4" parent="InventoryMenu/baseMenuContainer/baseMenuScreen/NinePatchRect/MarginContainer/SlotsContainer" instance=ExtResource("2_somwp")]
 layout_mode = 2
 
-[node name="MarginContainer5" parent="popUpMenu/baseMenuContainer/baseMenuScreen/NinePatchRect/MarginContainer/SlotsContainer" instance=ExtResource("2_somwp")]
+[node name="Inventory_UI_slot5" parent="InventoryMenu/baseMenuContainer/baseMenuScreen/NinePatchRect/MarginContainer/SlotsContainer" instance=ExtResource("2_somwp")]
 layout_mode = 2
 
-[node name="MarginContainer6" parent="popUpMenu/baseMenuContainer/baseMenuScreen/NinePatchRect/MarginContainer/SlotsContainer" instance=ExtResource("2_somwp")]
+[node name="Inventory_UI_slot6" parent="InventoryMenu/baseMenuContainer/baseMenuScreen/NinePatchRect/MarginContainer/SlotsContainer" instance=ExtResource("2_somwp")]
 layout_mode = 2
 
-[node name="MarginContainer7" parent="popUpMenu/baseMenuContainer/baseMenuScreen/NinePatchRect/MarginContainer/SlotsContainer" instance=ExtResource("2_somwp")]
+[node name="Inventory_UI_slot7" parent="InventoryMenu/baseMenuContainer/baseMenuScreen/NinePatchRect/MarginContainer/SlotsContainer" instance=ExtResource("2_somwp")]
 layout_mode = 2
 
-[node name="MarginContainer8" parent="popUpMenu/baseMenuContainer/baseMenuScreen/NinePatchRect/MarginContainer/SlotsContainer" instance=ExtResource("2_somwp")]
+[node name="Inventory_UI_slot8" parent="InventoryMenu/baseMenuContainer/baseMenuScreen/NinePatchRect/MarginContainer/SlotsContainer" instance=ExtResource("2_somwp")]
 layout_mode = 2
 
-[node name="MarginContainer9" parent="popUpMenu/baseMenuContainer/baseMenuScreen/NinePatchRect/MarginContainer/SlotsContainer" instance=ExtResource("2_somwp")]
+[node name="Inventory_UI_slot9" parent="InventoryMenu/baseMenuContainer/baseMenuScreen/NinePatchRect/MarginContainer/SlotsContainer" instance=ExtResource("2_somwp")]
 layout_mode = 2
 
-[node name="separator" type="Control" parent="popUpMenu/baseMenuContainer"]
+[node name="separator" type="Control" parent="InventoryMenu/baseMenuContainer"]
 layout_mode = 2
