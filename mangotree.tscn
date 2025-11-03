@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5yrtdk67df4k"]
+
+[ext_resource type="Texture2D" uid="uid://43jemv6q2h5o" path="res://assets/sprites/models/farm-produce/mango tree.png" id="1_ak1rw"]
+
+[node name="mangotree" type="Sprite2D"]
+texture = ExtResource("1_ak1rw")

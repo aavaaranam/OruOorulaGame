@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://kyyfnxr2miyw"]
+[gd_scene load_steps=57 format=4 uid="uid://kyyfnxr2miyw"]
 
 [ext_resource type="PackedScene" uid="uid://b6nymi3kaf4ao" path="res://scenes/UI/Inventory/InventoryUI.tscn" id="1_2f3dj"]
 [ext_resource type="PackedScene" uid="uid://cp1h1p4vd0oro" path="res://scenes/player.tscn" id="1_5he1u"]
@@ -25,6 +25,8 @@
 [ext_resource type="Texture2D" uid="uid://0cejbhh3e0o2" path="res://assets/sprites/models/environment/terrain/veli.png" id="14_5he1u"]
 [ext_resource type="Texture2D" uid="uid://cwdx6s4nvgcw8" path="res://assets/sprites/models/house/kadai.png" id="15_5poiv"]
 [ext_resource type="PackedScene" uid="uid://cyga33niqfngs" path="res://scenes/mango.tscn" id="19_2wyq8"]
+[ext_resource type="PackedScene" uid="uid://in1vxk134vb8" path="res://scenes/mangotree.tscn" id="19_tel4y"]
+[ext_resource type="PackedScene" uid="uid://dcjtx1qni7th7" path="res://scenes/parrot.tscn" id="21_qkpxi"]
 [ext_resource type="PackedScene" uid="uid://was4ua81jd4g" path="res://scenes/paatti.tscn" id="27_o7ddy"]
 [ext_resource type="PackedScene" uid="uid://cdccjckfvqevo" path="res://scenes/maligai kadai/maligai_kadai.tscn" id="27_vxglm"]
 [ext_resource type="PackedScene" path="res://scenes/firework.tscn" id="28_2f3dj"]
@@ -478,19 +480,37 @@ position = Vector2(76, 390)
 [node name="PathFollow2D" parent="Paatti/Path2D" index="0"]
 y_sort_enabled = true
 
+[node name="mangotree" parent="." instance=ExtResource("19_tel4y")]
+position = Vector2(572, 85)
+
 [node name="Collectibles" type="Node" parent="."]
 
 [node name="Mango4" parent="Collectibles" instance=ExtResource("19_2wyq8")]
-position = Vector2(379, 272)
+position = Vector2(648, 119)
 
 [node name="Mango3" parent="Collectibles" instance=ExtResource("19_2wyq8")]
-position = Vector2(322, 326)
+position = Vector2(579, 103)
 
 [node name="Mango" parent="Collectibles" instance=ExtResource("19_2wyq8")]
-position = Vector2(447, 274)
+position = Vector2(561, 125)
 
 [node name="Mango2" parent="Collectibles" instance=ExtResource("19_2wyq8")]
-position = Vector2(331, 247)
+position = Vector2(613, 113)
+
+[node name="parrot" parent="Collectibles" instance=ExtResource("21_qkpxi")]
+position = Vector2(563, 179)
+
+[node name="parrot2" parent="Collectibles" instance=ExtResource("21_qkpxi")]
+position = Vector2(610, 206)
+
+[node name="parrot3" parent="Collectibles" instance=ExtResource("21_qkpxi")]
+position = Vector2(598, 94)
+
+[node name="parrot4" parent="Collectibles" instance=ExtResource("21_qkpxi")]
+position = Vector2(556, 92)
+
+[node name="parrot5" parent="Collectibles" instance=ExtResource("21_qkpxi")]
+position = Vector2(634, 86)
 
 [node name="Fireworks" type="Node" parent="."]
 

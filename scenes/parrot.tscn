@@ -1,0 +1,97 @@
+[gd_scene load_steps=14 format=3 uid="uid://dcjtx1qni7th7"]
+
+[ext_resource type="Texture2D" uid="uid://b88rasingiu10" path="res://assets/sprites/models/farm-produce/parrot.png" id="1_qkfhc"]
+[ext_resource type="Script" uid="uid://dj8v2ctsdmch" path="res://scenes/parrot.gd" id="1_w755j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w755j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdbrf"]
+atlas = ExtResource("1_qkfhc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojfhj"]
+atlas = ExtResource("1_qkfhc")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82lbb"]
+atlas = ExtResource("1_qkfhc")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chpvc"]
+atlas = ExtResource("1_qkfhc")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5q3sm"]
+atlas = ExtResource("1_qkfhc")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w755j"]
+atlas = ExtResource("1_qkfhc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6g64"]
+atlas = ExtResource("1_qkfhc")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vda7l"]
+atlas = ExtResource("1_qkfhc")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nuuxd"]
+atlas = ExtResource("1_qkfhc")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w755j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdbrf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojfhj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82lbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chpvc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5q3sm")
+}],
+"loop": true,
+"name": &"fly_left",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w755j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6g64")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vda7l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nuuxd")
+}],
+"loop": true,
+"name": &"fly_right",
+"speed": 6.0
+}]
+
+[node name="parrot" type="CharacterBody2D"]
+script = ExtResource("1_w755j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_w755j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_w755j")
+animation = &"fly_left"
