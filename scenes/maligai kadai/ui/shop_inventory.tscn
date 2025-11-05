@@ -1,18 +1,69 @@
-[gd_scene load_steps=2 format=3 uid="uid://br428r6no4a5x"]
+[gd_scene load_steps=5 format=3 uid="uid://br428r6no4a5x"]
 
 [ext_resource type="Script" uid="uid://gjmukcwerrks" path="res://scenes/maligai kadai/ui/shop_inventory.gd" id="1_exydb"]
+[ext_resource type="Texture2D" uid="uid://8kfsf2fttaqc" path="res://assets/sprites/maligai kadai/inventory-box.png" id="2_s6v50"]
+[ext_resource type="Texture2D" uid="uid://c4do02wswvcvf" path="res://assets/sprites/maligai kadai/inventory-label.png" id="3_tutj6"]
+[ext_resource type="Script" uid="uid://d3u8qdapw0aon" path="res://scenes/maligai kadai/ui/inventory_list_container.gd" id="4_ckeeo"]
 
 [node name="ShopInventory" type="Control"]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 0
+offset_right = 436.0
+offset_bottom = 348.0
+script = ExtResource("1_exydb")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(250, 200)
+layout_mode = 1
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -218.0
-offset_top = -174.0
-offset_right = 218.0
-offset_bottom = 174.0
+offset_top = -100.0
+offset_right = 200.0
+offset_bottom = 100.0
+grow_vertical = 2
+texture = ExtResource("2_s6v50")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_exydb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Panel" type="Panel" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/MarginContainer/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -81.0
+offset_right = 81.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/MarginContainer/VBoxContainer/Panel/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("3_tutj6")
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="InventoryListContainer" type="VBoxContainer" parent="NinePatchRect/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("4_ckeeo")

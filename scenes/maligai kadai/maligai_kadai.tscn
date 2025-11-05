@@ -1,26 +1,39 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdccjckfvqevo"]
+[gd_scene load_steps=6 format=3 uid="uid://cdccjckfvqevo"]
 
 [ext_resource type="Texture2D" uid="uid://cwdx6s4nvgcw8" path="res://assets/sprites/models/house/kadai.png" id="1_64fu5"]
 [ext_resource type="Script" uid="uid://dqsf3moxw85u1" path="res://scenes/maligai kadai/maligai_kadai.gd" id="1_ege14"]
+[ext_resource type="Resource" uid="uid://bljrk5gxx854x" path="res://scenes/maligai kadai/inventory/shop_inventory_stock.tres" id="2_i4tmw"]
 [ext_resource type="PackedScene" uid="uid://br428r6no4a5x" path="res://scenes/maligai kadai/ui/shop_inventory.tscn" id="2_sqx2j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ege14"]
-size = Vector2(54.5, 30)
+size = Vector2(54.5, 38)
 
 [node name="MaligaiKadai" type="Area2D"]
 script = ExtResource("1_ege14")
-
-[node name="ShopInventory" parent="." instance=ExtResource("2_sqx2j")]
+shopInventoryStock = ExtResource("2_i4tmw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_64fu5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-52, 25)
+position = Vector2(-52, 29)
 shape = SubResource("RectangleShape2D_ege14")
+
+[node name="ShopInventory" parent="." instance=ExtResource("2_sqx2j")]
+z_index = 7
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -152.0
+offset_right = 0.0
+offset_bottom = 138.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(-78, -63)
 polygon = PackedVector2Array(157, 0, 157, 82, 143, 82, 143, 103, 84, 103, 84, 146, 52, 146, 52, 105, -8, 105, 0, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends Area2D
 
 @onready var player: CharacterBody2D = $"../../Player"
 @onready var mangoItem =  preload("res://scenes/Inventory/items/mango.tres")

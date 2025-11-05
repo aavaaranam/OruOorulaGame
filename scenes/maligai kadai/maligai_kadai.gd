@@ -1,12 +1,17 @@
 extends Area2D
 @onready var player: CharacterBody2D = $"../Player"
 @onready var shop_inventory: Control = $ShopInventory
+@export var shopInventoryStock:InventoryStock
 
 var isPlayerNear = false
 @onready var dialogue = load("res://dialogue/main.dialogue")
+
+func _ready() -> void:
+	shop_inventory.visible = false
+
 func _unhandled_input(event: InputEvent) -> void:
 	if(event.is_action_pressed("shop") and isPlayerNear):
-		shop_inventory.visible = true
+		shop_inventory.toggleVisibility()
 		#DialogueManager.show_example_dialogue_balloon(dialogue)
 
 func _on_body_entered(body: Node2D) -> void:

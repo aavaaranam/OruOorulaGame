@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cy6wn2hvx3prr"]
+
+[ext_resource type="Script" uid="uid://bqg6bbx66ntns" path="res://classes/items/item.gd" id="1_srug8"]
+[ext_resource type="Texture2D" uid="uid://crexmwckvddax" path="res://assets/sprites/models/farm-produce/maangaa.png" id="2_3phvr"]
+
+[resource]
+script = ExtResource("1_srug8")
+name = "mango"
+texture = ExtResource("2_3phvr")
+metadata/_custom_type_script = "uid://bqg6bbx66ntns"

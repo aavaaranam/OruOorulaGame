@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InventoryStock" load_steps=5 format=3 uid="uid://bljrk5gxx854x"]
+
+[ext_resource type="Script" uid="uid://bqg6bbx66ntns" path="res://classes/items/item.gd" id="1_djp2e"]
+[ext_resource type="Script" uid="uid://orepgpce3l0k" path="res://classes/items/inventory_stock.gd" id="1_utngs"]
+[ext_resource type="Resource" uid="uid://cy6wn2hvx3prr" path="res://classes/items/resources/mango.tres" id="2_2pju8"]
+[ext_resource type="Resource" uid="uid://f400fwpipie2" path="res://classes/items/resources/chrysanthemum.tres" id="3_0s3iu"]
+
+[resource]
+script = ExtResource("1_utngs")
+items = Array[ExtResource("1_djp2e")]([ExtResource("2_2pju8"), ExtResource("3_0s3iu")])
+count = 10
+metadata/_custom_type_script = "uid://orepgpce3l0k"

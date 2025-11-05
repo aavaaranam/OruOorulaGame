@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://f400fwpipie2"]
+
+[ext_resource type="Script" uid="uid://bqg6bbx66ntns" path="res://classes/items/item.gd" id="1_wsqeu"]
+[ext_resource type="Texture2D" uid="uid://cjwkxkb27vgpx" path="res://assets/sprites/models/farm-produce/chrys.png" id="2_nxmm3"]
+
+[resource]
+script = ExtResource("1_wsqeu")
+name = "chrysanthemum"
+texture = ExtResource("2_nxmm3")
+metadata/_custom_type_script = "uid://bqg6bbx66ntns"

@@ -46,9 +46,9 @@ func move_to_target(new_target_pos: Vector2, duration: float = 1.0) -> void:
 		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if (body.is_in_group("player")):
-		var new_pos:Vector2 
-		new_pos.x = body.global_position.x+100
-		new_pos.y = body.global_position.y+100
-		move_to_target( new_pos)
+#func _on_area_2d_body_entered(body: Node2D) -> void:
+	#if (body.is_in_group("player")):
+		#var new_pos:Vector2 
+		#new_pos.x = body.global_position.x+100
+		#new_pos.y = body.global_position.y+100
+		#move_to_target( new_pos)

@@ -32,11 +32,11 @@ func _input(event):
 	if event.is_action_pressed("light-cracker"):
 		animated_sprite_2d.play("oothuvathi")
 
-func addItemToInventory(invItem:InventoryItem):
-	if invItem in inventory.items:
-		for i in inventory.items:
-			if (invItem == i):
-				i.count +=1
-	else:
-		inventory.items.append(invItem)
-	inventory_ui.update_slots()
+#func addItemToInventory(invItem:InventoryItem):
+	#if invItem in inventory.items:
+		#for i in inventory.items:
+			#if (invItem == i):
+				#i.count +=1
+	#else:
+		#inventory.items.append(invItem)
+	#inventory_ui.update_slots()
