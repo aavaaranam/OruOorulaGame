@@ -1,17 +1,19 @@
-[gd_scene load_steps=66 format=3 uid="uid://cp1h1p4vd0oro"]
+[gd_scene load_steps=74 format=3 uid="uid://cp1h1p4vd0oro"]
 
 [ext_resource type="Script" uid="uid://bjplqf1tv0kkr" path="res://scripts/player.gd" id="1_oprun"]
 [ext_resource type="Resource" uid="uid://bk8dloy8mbxjp" path="res://scenes/Inventory/player_inventory.tres" id="2_a8ls1"]
 [ext_resource type="PackedScene" uid="uid://b6v6i315sn10x" path="res://scenes/Inventory/inventory_ui.tscn" id="3_qfm1y"]
 [ext_resource type="Texture2D" uid="uid://cptc0wj2bgxmx" path="res://assets/sprites/player-girl/player-girl-attack1.png" id="5_4r5pv"]
 [ext_resource type="Texture2D" uid="uid://lqbtvb302c68" path="res://assets/sprites/player-girl/player-girl.png" id="6_60mlk"]
+[ext_resource type="Texture2D" uid="uid://dhoknpa0alq5d" path="res://assets/sprites/cycle.png" id="6_oprun"]
 [ext_resource type="Texture2D" uid="uid://m875ryicr2it" path="res://assets/sprites/player-girl/player-girl-oothuvathi.png" id="7_i4ail"]
 [ext_resource type="Texture2D" uid="uid://dlcwk8m6xotid" path="res://assets/sprites/player-girl/player-girl-shock.png" id="8_a38lo"]
 [ext_resource type="Script" uid="uid://c6wxaatqrjb04" path="res://classes/states/finite_state_machine.gd" id="9_4ni07"]
 [ext_resource type="Script" uid="uid://npri8euky5ki" path="res://classes/states/idle_state.gd" id="10_l71n6"]
 [ext_resource type="Script" uid="uid://c144847al5f1s" path="res://classes/states/walk_state.gd" id="11_ke2ow"]
 [ext_resource type="Script" uid="uid://ci5fbvxfeebrq" path="res://classes/states/attack_state.gd" id="12_ujl30"]
-[ext_resource type="Script" uid="uid://c0h4yee4ejs6w" path="res://scenes/shock_state.gd" id="13_31cv2"]
+[ext_resource type="Script" path="res://scenes/shock_state.gd" id="13_31cv2"]
+[ext_resource type="Script" uid="uid://jmo2mt6jlyto" path="res://classes/states/on_cycle.gd" id="14_a8ls1"]
 [ext_resource type="AudioStream" uid="uid://beyu0abcoqela" path="res://sounds/sword_sfx.wav" id="14_pf23h"]
 [ext_resource type="AudioStream" uid="uid://de1fxnni42wuv" path="res://sounds/stepdirt_2.wav" id="15_dt7fs"]
 
@@ -38,6 +40,30 @@ region = Rect2(0, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_b1qrp"]
 atlas = ExtResource("6_60mlk")
 region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8ls1"]
+atlas = ExtResource("6_oprun")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfm1y"]
+atlas = ExtResource("6_oprun")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fulsm"]
+atlas = ExtResource("6_oprun")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4r5pv"]
+atlas = ExtResource("6_oprun")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60mlk"]
+atlas = ExtResource("6_oprun")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4ail"]
+atlas = ExtResource("6_oprun")
+region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5q0nq"]
 atlas = ExtResource("7_i4ail")
@@ -243,6 +269,29 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_a8ls1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfm1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fulsm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4r5pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60mlk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4ail")
+}],
+"loop": true,
+"name": &"on_cycle",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_5q0nq")
 }, {
 "duration": 1.0,
@@ -423,7 +472,7 @@ offset_bottom = 82.0
 y_sort_enabled = true
 position = Vector2(74, 79)
 sprite_frames = SubResource("SpriteFrames_wqfne")
-animation = &"attack"
+animation = &"on_cycle"
 offset = Vector2(0, -12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -446,6 +495,9 @@ script = ExtResource("12_ujl30")
 
 [node name="Shock" type="Node2D" parent="FiniteStateMachine"]
 script = ExtResource("13_31cv2")
+
+[node name="OnCycle" type="Node2D" parent="FiniteStateMachine"]
+script = ExtResource("14_a8ls1")
 
 [node name="swordSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_pf23h")

@@ -57,6 +57,7 @@ func Transition(newstate : String):
 		state_transition.emit(self, newstate)
 
 func _update_animations(movement:Vector2):
+
 	var anim_name := 'walk-'
 	anim_name +=(
 		"right" if movement.x>0 and movement.y==0.0

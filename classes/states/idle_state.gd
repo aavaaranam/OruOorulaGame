@@ -17,3 +17,10 @@ func update(_delta : float):
 
 func _on_thenna_maram_coconut_falling() -> void:
 	state_transition.emit(self,"Shock")
+	
+
+
+
+
+func _on_cycle_is_on_cycle() -> void:
+	state_transition.emit(self,"OnCycle")

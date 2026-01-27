@@ -9,7 +9,7 @@ extends CharacterBody2D
 
 
 var isKolamMode =false
-
+var isOncycle = false
 
 
 func _input(event):
@@ -40,3 +40,7 @@ func _input(event):
 	#else:
 		#inventory.items.append(invItem)
 	#inventory_ui.update_slots()
+
+func  isOnCycle()->bool:
+	return isOncycle
+	
